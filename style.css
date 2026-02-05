@@ -2,37 +2,44 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
     font-family: Arial, sans-serif;
     background: #efefef;
 }
 
-.container {
-    height: 100%;
+body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+}
 
-    transform: scale(0.95);
+/* MAGIC FIX */
+.container {
+    max-height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Reset margins that cause scroll */
+h1, p {
+    margin: 8px 0;
 }
 
 h1 {
-    font-size: 48px;
-    margin-bottom: 8px;
+    font-size: 46px;
 }
 
 .subtitle {
     color: #666;
     font-size: 18px;
-    margin-bottom: 20px;
 }
 
 .mascot {
     width: 130px;
+    margin: 15px auto;
+    display: block;
     animation: breathe 4s ease-in-out infinite;
-    margin: 10px 0;
 }
 
 @keyframes breathe {
@@ -43,18 +50,16 @@ h1 {
 
 .counter {
     color: #777;
-    margin-top: 10px;
-    font-size: 16px;
+    margin-top: 12px;
 }
 
 .goat {
     font-size: 26px;
     margin-top: 5px;
-    color: #222;
 }
 
 .buttons {
-    margin-top: 20px;
+    margin-top: 18px;
 }
 
 .btn {
