@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>BareMinum</title>
 
 <link rel="stylesheet" href="style.css">
 
-<!-- GoatCounter -->
+<!-- GoatCounter tracking -->
 <script data-goatcounter="https://bareminum.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
-<script async src="https://bareminum.goatcounter.com/counter.js"></script>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+    fetch("https://bareminum.goatcounter.com/counter/TOTAL.json")
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("gc-count").textContent = data.count;
+        })
+        .catch(() => {
+            document.getElementById("gc-count").textContent = "?";
+        });
+});
+</script>
 
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="container">
 
 <h1>BareMinum</h1>
 
@@ -29,27 +38,26 @@ No roadmap. No promises.<br>
 Just a meme.
 </p>
 
-<img src="mascot.png" class="mascot">
+<img src="mascot.png" class="mascot" alt="BareMinum Mascot">
 
 <p class="counter">
-Visitors doing nothing:
-<br>
-<span data-goatcounter="https://bareminum.goatcounter.com/count"></span>
+Visitors doing nothing:<br>
+<span id="gc-count">...</span>
 </p>
 
 <div class="buttons">
 
-<a href="https://x.com/BareMinum" target="_blank" class="btn-outline">
+<a href="https://x.com/BareMinum" target="_blank" class="btn btn-x">
 Follow on X
 </a>
 
-<a href="https://t.me/bareminumcoin" target="_blank" class="btn-filled">
+<a href="https://t.me/bareminumcoin" target="_blank" class="btn btn-telegram">
 Join Telegram
 </a>
 
 </div>
 
-<p class="disclaimer">
+<p class="footer">
 This is a meme project.<br>
 Nothing here is financial advice.
 </p>
