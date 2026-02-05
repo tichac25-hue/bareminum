@@ -7,22 +7,9 @@
 
 <link rel="stylesheet" href="style.css">
 
-<!-- GoatCounter tracking -->
+<!-- GoatCounter -->
 <script data-goatcounter="https://bareminum.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
-
-<script>
-window.addEventListener("DOMContentLoaded", () => {
-    fetch("https://bareminum.goatcounter.com/counter/TOTAL.json")
-        .then(res => res.json())
-        .then(data => {
-            document.getElementById("gc-count").textContent = data.count;
-        })
-        .catch(() => {
-            document.getElementById("gc-count").textContent = "?";
-        });
-});
-</script>
 
 </head>
 
@@ -38,11 +25,19 @@ No roadmap. No promises.<br>
 Just a meme.
 </p>
 
-<img src="mascot.png" class="mascot" alt="BareMinum Mascot">
+<img src="mascot.png" class="mascot">
 
 <p class="counter">
-Visitors doing nothing:<br>
-<span id="gc-count">...</span>
+Visitors doing nothing:
+</p>
+
+<!-- GoatCounter visible widget -->
+<p class="goat">
+<a href="https://bareminum.goatcounter.com" target="_blank">
+<script>
+document.write(goatcounter.visit_count)
+</script>
+</a>
 </p>
 
 <div class="buttons">
